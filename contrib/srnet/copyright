@@ -1,7 +1,11 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: session-router
 Source: https://github.com/session-foundation/session-router
+Comment: This package is built from the SRNet fork of session-router (branch
+ srnet/mapexit-dev, commit in BUILDINFO): upstream session-router plus the SRNet
+ Linux route-poking fix, client exit mapping and this packaging.
 
 Files: *
 Copyright: 2025 Session Technology Foundation
+           2026 SRNet contributors (SRNet changes)
 License: GPL-3+

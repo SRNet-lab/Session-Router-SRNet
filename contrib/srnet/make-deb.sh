@@ -18,7 +18,7 @@ Package: session-router-srnet
 Source: session-router
 Version: $V
 Architecture: amd64
-Maintainer: ${DEB_MAINTAINER:-SRNet <noreply@srnet.invalid>}
+Maintainer: ${DEB_MAINTAINER:-SRNet <121732083+SRNet-lab@users.noreply.github.com>}
 Installed-Size: $SZ
 Depends: $DEPS, adduser, curl
 Provides: session-router-bin (= 1.1.0-1~ubuntu2404)
@@ -26,16 +26,18 @@ Conflicts: session-router-bin
 Replaces: session-router-bin
 Section: net
 Priority: optional
-Homepage: https://github.com/session-foundation/session-router
+Homepage: https://github.com/SRNet-lab/SRNet-Desktop
 Description: Session Router with client exit mapping (MapExit) -- binaries
  Drop-in replacement for session-router-bin 1.1.0, for use with the stock
  session-router-client service. Built from session-router commit
  $COMMIT
  (upstream afb98f959f4f plus the Linux route-poking fix and client exit
- mapping). Build inputs: see BUILDINFO in /usr/share/doc/session-router-srnet.
+ mapping), branch srnet/mapexit-dev of the SRNet session-router fork.
+ Build inputs: see BUILDINFO in /usr/share/doc/session-router-srnet.
 C
 (cd $R && find usr -type f -exec md5sum {} \; | sort -k2 > DEBIAN/md5sums)
 SOURCE_DATE_EPOCH=$(sed -n 's/^source_date_epoch=//p' $O/BUILDINFO) \
   dpkg-deb --root-owner-group -Zxz --build $R $DEST/session-router-srnet_${V}_amd64.deb >/dev/null
 rm -rf $T
+chmod 644 $DEST/session-router-srnet_${V}_amd64.deb
 (cd $DEST && sha256sum session-router-srnet_${V}_amd64.deb | tee session-router-srnet_${V}_amd64.deb.sha256)
