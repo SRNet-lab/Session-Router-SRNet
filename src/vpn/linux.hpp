@@ -386,6 +386,14 @@ namespace srouter::vpn
             }
             else
             {
+                // IPv6 does not merge the local and main tables the way IPv4 does: the local table
+                // is consulted first, so a ::/0 blackhole there would also swallow every more
+                // specific main-table route, including the TUN's own prefix (and with it every
+                // .sesh address).  Put it in main instead, where it only catches what no more
+                // specific route covers, with a metric that still beats the regular default route.
+                nl_request.r.rtm_table = RT_TABLE_MAIN;
+                uint32_t prio = 1;
+                nl_request.AddData(RTA_PRIORITY, &prio, sizeof(prio));
                 std::array<uint64_t, 2> addr{};
                 nl_request.AddData(RTA_DST, &addr, sizeof(addr));
             }
