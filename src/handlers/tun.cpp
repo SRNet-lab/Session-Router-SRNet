@@ -548,7 +548,7 @@ namespace srouter::handlers
                 auto* session = _router.session_endpoint().get_session(*exit_remote);
                 if (session and session->is_exit_capable)
                 {
-                    log::info(
+                    log::trace(
                         logcat,
                         "Outbound packet {} routed via exit broker {}",
                         pkt.info_line(),
@@ -637,7 +637,7 @@ namespace srouter::handlers
             log::trace(logcat, "inbound exit pkt for exit node: {}", pkt.info_line());
             if (not is_allowing_traffic(pkt))
             {
-                log::warning(
+                log::debug(
                     logcat,
                     "Dropping inbound exit packet: denied by local traffic policy ({}; proto={} dest_port={} policy={})",
                     pkt.info_line(),
