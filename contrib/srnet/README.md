@@ -23,7 +23,7 @@ already added), so the stock binary is never installed:
 
 ```sh
 cd /tmp
-curl -fLO https://github.com/SRNet-lab/__ROUTER_REPO__/releases/download/v1.1.0-srnet6/session-router-srnet_1.1.0+srnet6_amd64.deb
+curl -fLO https://github.com/SRNet-lab/Session-Router-SRNet/releases/download/v1.1.0-srnet6/session-router-srnet_1.1.0+srnet6_amd64.deb
 sudo apt install -y ./session-router-srnet_1.1.0+srnet6_amd64.deb session-router-client
 sudo apt-mark hold session-router-srnet session-router-client
 ```
