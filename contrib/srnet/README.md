@@ -1,15 +1,19 @@
 # SRNet build of Session Router
 
+The Session Router build used by the SRNet client,
+[SRNet-Desktop](https://github.com/SRNet-lab/SRNet-Desktop). Install it by following the
+[SRNet-Desktop install steps](https://github.com/SRNet-lab/SRNet-Desktop#install).
+
 This branch (`srnet/mapexit-dev`) is upstream
 [session-foundation/session-router](https://github.com/session-foundation/session-router)
 `afb98f959f4f7e0ef996aef02fa21a6caf26b1e9` plus:
 
-| Branch | What | For upstream? |
-|---|---|---|
-| `upstream-base` | upstream `afb98f959f4f`, unmodified | - |
-| `fix/linux-route-poking` | Linux default-gateway discovery, route install, IPv6 blackhole fixes | yes |
-| `feature/map-exit` | client exit mapping: `MapExit` / `UnmapExit` / `SwapExits` RPC and exit route poking | yes |
-| `srnet/mapexit-dev` | both of the above plus this Ubuntu 24.04 build and `.deb` packaging | no (packaging only) |
+| Branch | What |
+|---|---|
+| `upstream-base` | upstream `afb98f959f4f`, unmodified |
+| `fix/linux-route-poking` | Linux default-gateway discovery, route install, IPv6 blackhole fixes |
+| `feature/map-exit` | client exit mapping: `MapExit` / `UnmapExit` / `SwapExits` RPC and exit route poking |
+| `srnet/mapexit-dev` | both of the above plus this Ubuntu 24.04 build and `.deb` packaging |
 
 ## The package
 
@@ -45,3 +49,7 @@ contrib/srnet/make-deb.sh out 1.1.0+srnet6 dist          # needs dpkg-deb
 
 The build uses a clean clone of the committed `HEAD`. `out/BUILDINFO` records the source commit,
 compiler and the sha256 of both binaries; it is installed in `/usr/share/doc/session-router-srnet/`.
+
+## License
+
+GPL-3.0-or-later, the same as upstream Session Router. See [LICENSE](../../LICENSE).
