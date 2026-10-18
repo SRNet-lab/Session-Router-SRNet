@@ -4,6 +4,9 @@ The Session Router build used by the SRNet client,
 [SRNet-Desktop](https://github.com/SRNet-lab/SRNet-Desktop). Install it by following the
 [SRNet-Desktop install steps](https://github.com/SRNet-lab/SRNet-Desktop#install).
 
+SRNet is an independent project. It is not affiliated with or endorsed by the Session Foundation
+or the Session Technology Foundation.
+
 This branch (`srnet/mapexit-dev`) is upstream
 [session-foundation/session-router](https://github.com/session-foundation/session-router)
 `afb98f959f4f7e0ef996aef02fa21a6caf26b1e9` plus:
